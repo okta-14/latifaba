@@ -1,0 +1,400 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    width: 100%;
+    height: 70vh;
+    background: url("../../images/blogd.png") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 80px;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.header-content h1 {
+    color: #02235f;
+    font-size: 44px;
+    font-weight: 800;
+}
+
+.header-content .line {
+    width: 55px;
+    height: 4px;
+    background: linear-gradient(90deg, #e31e24, #ff5b5b);
+    border-radius: 100px;
+    margin: 8px 0 12px;
+}
+
+.subtitle {
+    width: 45%;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* ================= TITLE BAR ================= */
+
+.title-bar{
+    width:90%;
+    max-width:1400px;
+    margin:45px auto 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    border-bottom:1px solid #ececec;
+    padding-bottom:18px;
+}
+
+
+
+.title-bar p{
+    color:#777;
+    font-size:15px;
+}
+
+.title-bar p strong{
+    color:#e31e24;
+}
+
+/* ================= SEARCH ================= */
+
+.search-form {
+    display: flex;
+    align-items: center;
+    border: 1px solid #d8ddee;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    width: 280px;
+    flex-shrink: 0;
+}
+
+.search-form input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 12px 14px;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    color: #333;
+    background: transparent;
+    min-width: 0;
+}
+
+.search-form input::placeholder {
+    color: #aaa;
+}
+
+.search-form button {
+    border: none;
+    background: transparent;
+    color: #333;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+    flex-shrink: 0;
+}
+
+.search-form button:hover {
+    color: #e31e24;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 600px) {
+    .title-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-form {
+        width: 100%;
+    }
+}
+
+/* ================= GRID ================= */
+
+.artikel {
+    width: 95%;
+    max-width: 1400px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+
+    align-items: stretch;
+}
+
+/* link */
+
+.card-link {
+    display: flex;
+    height: 100%;
+}
+
+/* ================= CARD ================= */
+
+.card-artikel {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+}
+
+.card-artikel:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.13);
+}
+
+/* ================= IMAGE ================= */
+
+.img {
+    position: relative;
+    width: 100%;
+
+    aspect-ratio: 16/10;
+    overflow: hidden;
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: 0.4s;
+}
+
+.card-artikel:hover .img img {
+    transform: scale(1.05);
+}
+
+/* ================= CATEGORY ================= */
+
+.category {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+
+    background: #e31e24;
+    color: #fff;
+
+    padding: 6px 12px;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    border-radius: 8px;
+}
+
+/* ================= CONTENT ================= */
+
+.artikel-content {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 16px;
+}
+
+/* ================= DATE ================= */
+
+.artikel-date {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: #888;
+    font-size: 12px;
+
+    margin-bottom: 12px;
+}
+
+.artikel-date i {
+    color: #02235f;
+}
+
+/* ================= TITLE ================= */
+
+.artikel-title {
+    color: #02235f;
+
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+
+    min-height: 56px;
+    margin-bottom: 10px;
+}
+
+/* ================= CAPTION ================= */
+
+.ringkasan {
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+
+    overflow: hidden;
+
+    min-height: 72px;
+}
+
+/* ================= READ MORE ================= */
+
+.read-more {
+    margin-top: auto;
+
+    color: #e31e24;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    transition: 0.3s;
+}
+
+.card-artikel:hover .read-more {
+    gap: 14px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1200px) {
+    .artikel {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .artikel {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width:600px){
+
+    /* HEADER */
+
+    header{
+        height:25vh;
+        padding:95px 20px 35px;
+        align-items:flex-start;
+        background-position:68% center;
+    }
+
+    .header-content{
+        width:100%;
+        max-width:270px;
+        margin-top:10px;
+    }
+
+    .header-content h1{
+        font-size:clamp(28px,7vw,34px);
+        line-height:1.15;
+    }
+
+    .header-content .line{
+        width:45px;
+        margin:10px 0;
+    }
+
+    .subtitle{
+        display:none;
+    }
+
+    /* TITLE BAR */
+
+    .title-bar{
+        width:92%;
+        margin:35px auto 25px;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+
+    .title{
+        font-size:24px;
+    }
+
+    .search-form{
+        width:100%;
+    }
+
+    /* CARD */
+
+    .artikel{
+        width:92%;
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .artikel-title{
+        font-size:18px;
+        min-height:auto;
+    }
+
+    .ringkasan{
+        font-size:12px;
+        line-height:1.7;
+
+        display:-webkit-box;
+        -webkit-box-orient:vertical;
+        -webkit-line-clamp:3;
+        line-clamp:3;
+        overflow:hidden;
+
+        min-height:auto;
+    }
+
+    .read-more{
+        font-size:15px;
+    }
+
+}

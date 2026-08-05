@@ -1,0 +1,369 @@
+/* ==========================================================
+   RESET
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+
+    width:100%;
+    min-height:100%;
+    overflow-x:hidden;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+body{
+
+    background:#fff;
+
+}
+
+/* ==========================================================
+   LANDING PAGE
+========================================================== */
+
+.landing-page{
+
+    position:relative;
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    padding:60px 20px;
+
+    background-image:
+    linear-gradient(
+        rgba(255,255,255,.28),
+        rgba(255,255,255,.28)
+    ),
+    url("../../images/landingpage.png");
+
+    background-position:center;
+
+    background-size:cover;
+
+    background-repeat:no-repeat;
+
+}
+
+/* efek cahaya */
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(
+        ellipse at center,
+
+        rgba(255,255,255,.05) 0%,
+
+        rgba(255,255,255,.18) 40%,
+
+        rgba(255,255,255,.30) 70%,
+
+        rgba(255,255,255,.42) 100%
+    );
+
+}
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.content{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    max-width:1350px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.logo{
+
+    width:200px;
+    margin-top: -10px;
+    margin-bottom:-20px;
+
+}
+
+
+.content h1{
+
+    color:#02235f;
+
+    font-size:clamp(32px,5vw,55px);
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    margin-bottom:10px;
+
+}
+
+.content p{
+
+    color:#666;
+
+    font-size:16px;
+
+    margin-bottom:30px;
+
+}
+
+/* ==========================================================
+   BUTTON
+========================================================== */
+
+/* ==========================
+   BUTTON MASUK WEBSITE
+========================== */
+
+.btn-masuk{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    padding:12px 25px;
+
+    background:#1E4FB8;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    border-radius:999px;
+
+    transition:all .35s ease;
+
+    box-shadow:
+        0 8px 18px rgba(30,79,184,.28);
+
+}
+
+.btn-masuk:hover{
+
+    background:#E31B23;
+
+    color:#fff;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 12px 24px rgba(227,27,35,.35);
+
+}
+
+.btn-masuk .arrow{
+
+    transition:.3s ease;
+
+}
+
+.btn-masuk:hover .arrow{
+
+    transform:translateX(5px);
+
+}
+
+
+
+/* ==========================================================
+   COMPANY GRID
+========================================================== */
+
+.company-wrapper{
+
+    margin-top:70px;
+
+    display:grid;
+
+    justify-content:center;
+
+    grid-template-columns:repeat(6,160px);
+
+    gap:18px;
+
+}
+
+
+.company-card{
+
+    position:relative;
+
+    width:160px;
+    height:155px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    /* Warna sama seperti CSS lama */
+    background:rgba(255,255,255,.55);
+
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    box-shadow:0 4px 14px rgba(0,0,0,.06);
+
+    transition:.3s ease;
+
+}
+
+.company-card:hover{
+
+    background:rgba(255,255,255,.85);
+
+    transform:translateY(-5px);
+
+    box-shadow:0 10px 22px rgba(0,0,0,.12);
+
+}
+
+.company-card img{
+
+    width:60px;
+    height:60px;
+
+    object-fit:contain;
+
+    margin-bottom:14px;
+
+    transition:.3s;
+
+}
+
+.company-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.company-card h4{
+
+    width:90%;
+
+    color:#14225c;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    text-align:center;
+
+    line-height:1.35;
+
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width:992px){
+
+    @media (max-width:992px){
+
+    .company-wrapper{
+
+        grid-template-columns:repeat(3,160px);
+
+        justify-content:center;
+
+    }
+
+}
+
+}
+
+@media (max-width:768px){
+
+    .company-wrapper{
+
+        grid-template-columns:repeat(2,150px);
+
+        justify-content:center;
+
+        gap:14px;
+
+    }
+
+    .company-card{
+
+        width:150px;
+
+        height:145px;
+
+    }
+
+    .company-card img{
+
+        width:50px;
+
+        height:50px;
+
+    }
+
+    .company-card h4{
+
+        font-size:12px;
+
+    }
+    .content p{
+
+        font-size:13px;
+
+        line-height:1.5;
+
+        max-width:300px;
+
+        margin:0 auto 22px;
+
+    }
+
+}

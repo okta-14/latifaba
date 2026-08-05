@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f8f9fc;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    width: 100%;
+    height: 40vh;
+       background:url("../../images/blogd.png") center/cover no-repeat;
+        
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-content {
+    text-align: center;
+}
+
+.header-content h6 {
+    font-size: 42px;
+    color: #052b75;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.line {
+    width: 90px;
+    height: 5px;
+    background: #e71d2b;
+    margin: auto;
+    border-radius: 20px;
+}
+
+/* ================= SECTION ================= */
+
+section {
+    max-width: 1250px;
+    margin: 70px auto;
+    padding: 0 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+/* ================= CARD ================= */
+.description{
+    margin-top: 8px;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    padding:0px 20px;
+}
+.vidio-card {
+    width: 380px;
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+}
+
+.vidio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* ================= VIDEO ================= */
+
+.vidio-card video {
+    width: 100%;
+    height: 220px;
+    display: block;
+    object-fit: cover;
+    background: #000;
+}
+
+/* ================= CONTENT ================= */
+
+.category {
+    margin: 20px 22px 10px;
+    color: #ef3b3b;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.title {
+    margin: 0 22px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #08296b;
+    line-height: 1.4;
+}
+
+.date {
+    margin: 20px 22px 24px;
+    color: #8c8c8c;
+    font-size: 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.date::before {
+    content: "📅";
+    font-size: 15px;
+}
+@media (max-width:1100px){
+
+    .header{
+        height:20vh;
+    }
+    section {
+    max-width: 1250px;
+    margin: 70px 30px;
+    padding: 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+ }
+
+}
+/* ================= TABLET ================= */
+
+@media (max-width: 1024px) {
+
+    header{
+        height: 30vh;
+    }
+
+    .header-content h6{
+        font-size: 34px;
+    }
+
+    section{
+        margin: 50px 30px;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: flex-start;
+    }
+
+    .vidio-card{
+        width: calc((100% - 20px) / 2);
+    }
+
+    .vidio-card video{
+        height: 200px;
+    }
+
+    .title{
+        font-size: 20px;
+    }
+
+}
+@media (max-width: 768px){
+
+    header{
+        height: 25vh;
+    }
+
+    .header-content h6{
+        font-size: 28px;
+    }
+
+    section{
+        margin: 40px 20px;
+        gap: 18px;
+    }
+
+    .vidio-card{
+        width: 100%;
+    }
+
+    .vidio-card video{
+        height: 220px;
+    }
+
+    .title{
+        font-size: 18px;
+    }
+
+}

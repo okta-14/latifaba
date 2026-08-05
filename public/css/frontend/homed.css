@@ -1,0 +1,1104 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.content {
+    font-family: "Poppins", sans-serif;
+}
+a{
+    text-decoration: none;
+}
+/* ================= HEADER ================= */
+
+header {
+    width: 100%;
+    min-height: 50vh;
+    margin-bottom: 40px;
+    background: url("../../images/homed.png") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 80px;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+.header-content h1 {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.blue {
+    color: #02235f;
+}
+
+.red {
+    color: #d81d2a;
+}
+
+.header-content p {
+    margin-top: 18px;
+    font-size: 18px;
+}
+
+.header-button {
+    display: flex;
+    gap: 18px;
+
+    margin-top: 30px;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 14px 28px;
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-5px);
+}
+
+.btn-blue {
+    background: #02235f;
+}
+
+.btn-red {
+    background: #d81d2a;
+}
+
+button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+button i {
+    color: #fff;
+}
+/* ================= about =================  */
+.about {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 80px;
+}
+
+.about .img {
+    width: 50%;
+}
+
+.about .img img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+}
+
+.about .content {
+    width: 50%;
+}
+
+.about .content h5 {
+    color: #e31e24;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.about .content h2 {
+    color: #123b87;
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.about .content h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #e31e24;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.about .content p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* ================= GROUP ================= */
+.group {
+    padding: 60px 80px;
+    background: #f8f9fb;
+}
+
+.group .business-list {
+    width: 100%;
+    max-width: 1350px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 22px;
+}
+
+.group .business-card {
+    text-decoration: none;
+    text-align: center;
+    padding: 24px 18px;
+    border-radius: 22px;
+    transition: .35s;
+}
+
+.group .business-card:hover {
+    transform: translateY(-8px);
+}
+
+.group .business-card img {
+    width: 78px;
+    height: 78px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.group .business-card h3 {
+    color: #123b87;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+
+/* ================= HOME MEMBER TITLE ================= */
+
+.home-member-title{
+    text-align: center;
+    margin: 50px 0 30px;
+}
+
+.home-member-title h2{
+    color: #02235f;
+    font-size: 38px;
+    font-weight: 700;
+    display: inline-block;
+    position: relative;
+}
+
+.home-member-title h2::after{
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: #e31e24;
+    display: block;
+    margin: 12px auto 0;
+    border-radius: 20px;
+}
+/* ======================== project=program =============================== */
+
+.project {
+    padding: 60px 50px;
+    background: #fff;
+}
+
+.content-project {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.content-project h2 {
+    font-size: 38px;
+    color: #123b87;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.content-project h2::after {
+    content: "";
+    width: 55px;
+    height: 4px;
+    background: #e31e24;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 5px;
+}
+
+/* ================= FLEX CONTAINER ================= */
+
+.project-container {
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 30px;
+    align-items: stretch;
+    justify-content: flex-start; /* card selalu urut normal dari kiri: 1, 2, 3 */
+}
+
+/* ================= LINK WRAPPER ================= */
+
+.project-link {
+    display: flex;
+    height: auto;
+    text-decoration: none;
+
+    flex: 1 1 calc((100% - 60px) / 3); /* 3 kolom, 60px = total gap (2 x 30px) */
+    max-width: calc((100% - 60px) / 3);
+}
+
+/* ================= CARD ================= */
+
+.project-card {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    transition: 0.3s ease;
+}
+
+.project-link:hover .project-card,
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* ================= IMAGE ================= */
+
+.project-image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: 0.4s;
+}
+
+.project-link:hover .project-image img {
+    transform: scale(1.05);
+}
+
+/* ================= BODY ================= */
+
+.project-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    min-width: 0;
+}
+
+.project-title {
+    color: #123b87;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.35;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+
+    overflow-wrap: break-word;
+    word-break: break-word;
+
+    min-height: 60px;
+    margin-bottom: 12px;
+}
+
+.project-content {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+
+    overflow-wrap: break-word;
+    word-break: break-word;
+
+    min-height: 72px;
+    margin-bottom: 18px;
+}
+
+/* ================= BUTTON ================= */
+
+.project-btn {
+    margin-top: auto;
+    color: #e31e24;
+    font-size: 15px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.project-link:hover .project-btn {
+    letter-spacing: 0.5px;
+}
+
+/* ================= EMPTY STATE ================= */
+
+.project-container p.text-center {
+    grid-column: 1 / -1;
+    width: 100%;
+    text-align: center;
+    color: #666;
+}
+
+/* ================= OTHER ================= */
+
+.other {
+    padding: 60px 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* ================= CARD BOX ================= */
+
+.news-container,
+.review-container,
+.vidio-container {
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    padding: 18px;
+    background: #fff;
+}
+
+/* ================= HEADER ================= */
+
+.news-header,
+.review-header,
+.vidio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.news-header h2,
+.review-header h2,
+.vidio-header h2 {
+    font-size: 18px;
+    color: #123b87;
+    font-weight: 700;
+    position: relative;
+}
+
+.news-header h2::after,
+.review-header h2::after,
+.vidio-header h2::after {
+    content: "";
+    width: 40px;
+    height: 3px;
+    background: #e31e24;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    border-radius: 5px;
+}
+
+.news-header a,
+.vidio-header a {
+    text-decoration: none;
+    color: #123b87;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+/* =======================================================
+                    NEWS SECTION
+======================================================= */
+
+.news-section,
+.review-section,
+.video-section {
+    width: 90%;
+    max-width: 1300px;
+    margin: 90px auto;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.section-header h2 {
+    font-size: 38px;
+    color: #123b87;
+    font-weight: 700;
+    position: relative;
+}
+
+.section-header h2::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: #e31e24;
+    display: block;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+.section-header a {
+    color: #e31e24;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.section-header a:hover {
+    letter-spacing: 1px;
+}
+
+/* ================= NEWS ================= */
+
+.news-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.featured-news {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.featured-news:hover {
+    transform: translateY(-8px);
+}
+
+.featured-news img {
+    width: 100%;
+    height: 330px;
+    object-fit: contain;
+}
+
+.featured-content {
+    padding: 30px;
+}
+
+.featured-content span {
+    color: #e31e24;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.featured-content h3 {
+    margin: 15px 0;
+    color: #123b87;
+    font-size: 30px;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.featured-content p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.featured-content a {
+    color: #123b87;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.news-item {
+    display: flex;
+    gap: 15px;
+    background: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.news-item:hover {
+    transform: translateX(8px);
+}
+
+.news-item img {
+    width: 120px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.news-item span {
+    color: #e31e24;
+    font-size: 13px;
+}
+
+.news-item h4 {
+    margin-top: 8px;
+    color: #123b87;
+    font-size: 18px;
+    line-height: 1.4;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* =======================================================
+                    REVIEW
+======================================================= */
+
+.review-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.review-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.review-card:hover {
+    transform: translateY(-8px);
+}
+
+.review-top {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #123b87;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.review-top h4 {
+    color: #123b87;
+    margin-bottom: 5px;
+}
+
+.review-top span {
+    color: #888;
+    font-size: 14px;
+}
+
+.review-card p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.star {
+    color: #ffd700;
+    font-size: 22px;
+}
+
+/* =======================================================
+                    VIDEO
+======================================================= */
+
+.video-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.main-video {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+}
+
+.main-video img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+}
+
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background: #e31e24;
+    color: #fff;
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.main-video:hover .play-btn {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 25px;
+    color: #fff;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+}
+
+.video-info span {
+    font-size: 14px;
+}
+
+.video-info h3 {
+    margin-top: 10px;
+    font-size: 28px;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.video-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.video-item {
+    display: flex;
+    gap: 15px;
+    background: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.video-item:hover {
+    transform: translateX(8px);
+}
+
+.video-item img {
+    width: 130px;
+    height: 90px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.video-item span {
+    color: #e31e24;
+    font-size: 13px;
+}
+
+.video-item h4 {
+    margin-top: 8px;
+    color: #123b87;
+    line-height: 1.4;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* =======================================================
+                    RESPONSIVE (TABLET)
+======================================================= */
+
+@media (max-width: 992px) {
+    .news-wrapper,
+    .video-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .review-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .project-link {
+        flex: 1 1 calc((100% - 30px) / 2);
+        max-width: calc((100% - 30px) / 2);
+    }
+
+    .group .business-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .home-member-title h2{
+        font-size: 25px;
+    }
+    .content-project h2{
+        font-size: 25px;
+    }
+
+    .review-container {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-news img {
+        height: 250px;
+    }
+
+    .main-video img {
+        height: 280px;
+    }
+
+    .section-header h2 {
+        font-size: 30px;
+    }
+
+    .featured-content h3 {
+        font-size: 24px;
+    }
+
+    .video-info h3 {
+        font-size: 22px;
+    }
+
+    .project-container {
+        gap: 20px;
+    }
+}
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+    .header-content h1.blue {
+        white-space: nowrap;
+        font-size: clamp(14px, 4.2vw, 20px);
+    }
+
+    .header-content h1.red {
+        font-size: clamp(18px, 4vw, 24px);
+        line-height: 1.35;
+    }
+}
+@media (max-width: 768px) {
+
+    /* ---------- 1. HEADER / HERO MOBILE ---------- */
+    header {
+        /* overlay putih tipis di atas gambar supaya teks blue/red tetap kebaca,
+           jadi teks tidak "bertabrakan" / tenggelam dengan gambar */
+        background:
+            linear-gradient(rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.85)),
+            url("../../images/homer.png") center/cover no-repeat;
+
+        min-height: 60vh;
+
+        padding: 100px 22px 40px;
+
+        justify-content: center;
+
+        text-align: center;
+    }
+
+    .header-content {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .header-content h1 {
+        width: 100%;
+
+        font-size: clamp(18px, 4vw, 20px);
+        line-height: 1.3;
+    }
+
+    .header-content p {
+        margin-top: 14px;
+
+        font-size: clamp(13px, 3.6vw, 15px);
+        line-height: 1.6;
+
+        max-width: 90%;
+    }
+
+    .header-button {
+    margin-top: 22px;
+
+    width: 50%;
+
+    display: flex;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+}
+
+.header-button button {
+    width: min(100px, 44%);
+    padding: 9px 10px;
+    font-size: 10px;
+    gap: 6px;
+}
+    
+    /* tombol menyesuaikan lebar layar, tidak kebesaran/kekecilan */
+    .header-button button {
+        width: min(150px, 55%);
+        padding: 12px 20px;
+        font-size: 11px;
+    }
+
+    /* ---------- 2. ABOUT ---------- */
+    .about {
+        flex-direction: column;
+
+        padding: 40px 20px;
+    }
+
+    .about .img,
+    .about .content {
+        width: 100%;
+    }
+
+    .about .img img {
+        height: 240px;
+    }
+
+    .group,
+    .project,
+    .other {
+        padding: 40px 20px;
+    }
+
+    /* ---------- 2. LATIFABA MEMBER (business-list) MOBILE ---------- */
+    /* menyesuaikan jumlah card yang muat per baris, bukan dipaksa 1 baris ke samping */
+    .group .business-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+    }
+
+    .group .business-card {
+        padding: 16px 8px;
+    }
+
+    .group .business-card img {
+        width: 52px;
+        height: 52px;
+        margin-bottom: 8px;
+    }
+
+    .group .business-card h3 {
+        font-size: 11px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .project-container {
+    flex-wrap: wrap;
+}
+    /* ---------- 3. PROJECT / PROGRAM KAMI MOBILE: 1 CARD PER BARIS ---------- */
+    .project-link {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .project-title {
+        font-size: 20px;
+        min-height: auto;
+    }
+
+    .project-content {
+        font-size: 14px;
+        min-height: auto;
+    }
+
+    .other {
+        grid-template-columns: 1fr;
+    }
+
+    /* ---------- 4. NEWS MOBILE: berita terbaru tetap besar,
+                    sisanya gambar kiri - tanggal & judul kanan ---------- */
+    .news-item {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .news-item img {
+        width: 90px;
+        height: 78px;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .news-item span {
+        font-size: 11px;
+    }
+
+    .news-item h4 {
+        margin-top: 4px;
+        font-size: 14px;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+    }
+
+    /* ---------- 5. VIDEO MOBILE: video utama tetap besar,
+                    sisanya gambar kiri - tanggal & judul kanan ---------- */
+    .video-item {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .video-item img {
+        width: 100px;
+        height: 72px;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .video-item span {
+        font-size: 11px;
+    }
+
+    .video-item h4 {
+        margin-top: 4px;
+        font-size: 14px;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content h1 {
+        font-size: clamp(20px, 7vw, 24px);
+    }
+
+    .header-content p {
+        font-size: 13px;
+    }
+
+    .header-button button {
+        width: min(200px, 90%);
+    }
+
+    header {
+        padding: 90px 15px 35px;
+    }
+
+    /* di layar sangat kecil, 3 kolom member bisa terlalu sempit -> turun ke 2 */
+    .group .business-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .news-item img {
+        width: 78px;
+        height: 68px;
+    }
+
+    .news-item h4 {
+        font-size: 13px;
+    }
+
+    .video-item img {
+        width: 88px;
+        height: 64px;
+    }
+
+    .video-item h4 {
+        font-size: 13px;
+    }
+}
