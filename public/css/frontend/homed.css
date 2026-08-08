@@ -189,6 +189,10 @@ button i {
     font-size: 13px;
     font-weight: 700;
     line-height: 1.35;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
@@ -976,7 +980,10 @@ button i {
     }
 
     .group .business-card h3 {
-        font-size: 11px;
+    font-size: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     }
 
     .card {

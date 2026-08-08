@@ -26,7 +26,7 @@
         <h1>LATIFABA GROUP</h1>
 
         <p>
-            Solusi Terpercaya untuk Berbagai Bidang Usaha
+            Bergerak Bertumbuh bersama
         </p>
 
         <a href="{{ route('home') }}" class="btn-masuk">

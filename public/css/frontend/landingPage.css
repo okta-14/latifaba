@@ -217,25 +217,40 @@ body{
 
     justify-content:center;
 
-    grid-template-columns:repeat(6,160px);
+    grid-template-columns:repeat(6,180px);
 
     gap:18px;
+       
+    color:#14225c;
+
+    font-size:11px;
+
+    font-weight:600;
+
+    text-align:center;
+
+    line-height:1.35;
+
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
 
 }
-
 
 .company-card{
 
     position:relative;
 
-    width:160px;
-    height:155px;
+    width:180px;
+    height:165px;
 
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-
+    white-space:nowrap;
     text-decoration:none;
 
     border-radius:18px;
@@ -291,7 +306,7 @@ body{
 
     color:#14225c;
 
-    font-size:13px;
+    font-size:11px;
 
     font-weight:600;
 
