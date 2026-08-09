@@ -266,11 +266,60 @@ nav {
 
 /*========================*/
 
-@media(max-width:768px){
+/* @media(max-width:768px){
     .lang-dropdown-menu{
         right:auto;
         left:0;
     }
+} */
+/* ================= TABLET (jadi seperti mobile) ================= */
+
+@media (max-width:992px) {
+
+    nav {
+        padding: 12px 24px;
+    }
+
+    .logo-latifaba img {
+        width: 55px;
+        height: auto;
+    }
+
+    .logo-latifaba p {
+        font-size: 11px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px;
+        gap: 18px;
+        display: none;
+        box-shadow: 0 10px 25px rgba(0,0,0,.15);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu a {
+        font-size: 15px;
+        width: 100%;
+    }
+
+    .contact-btn {
+        width: fit-content;
+    }
+
 }
 
 /* ================= FOOTER ================= */

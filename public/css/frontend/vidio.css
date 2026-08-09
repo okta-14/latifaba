@@ -205,5 +205,10 @@ section {
     .title{
         font-size: 18px;
     }
+    .header-content {
+    text-align: center;
+    position: relative;
+    top: 13px;
+}
 
 }
