@@ -32,7 +32,7 @@ class LoginController extends Controller
             }
 
             if (Auth::user()->level == 'petugas') {
-                return redirect()->route('admin');
+                return redirect()->route('programadmin.index');
             }
 
             return redirect()->route('home');
@@ -44,13 +44,13 @@ class LoginController extends Controller
     }
 
     public function logout(Request $request)
-{
-    Auth::logout();
+    {
+        Auth::logout();
 
-    $request->session()->invalidate();
+        $request->session()->invalidate();
 
-    $request->session()->regenerateToken();
+        $request->session()->regenerateToken();
 
-    return redirect()->route('landingPage');
-}
+        return redirect()->route('landingPage');
+    }
 }

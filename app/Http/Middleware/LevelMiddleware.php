@@ -10,14 +10,12 @@ class LevelMiddleware
 {
     public function handle(Request $request, Closure $next, ...$level)
     {
-        if(!Auth::check())
-        {
+        if (!Auth::check()) {
             return redirect('/login');
         }
 
-        if(!in_array(Auth::user()->level,$level))
-        {
-            abort(403);
+        if (!in_array(Auth::user()->level, $level)) {
+            abort(403, 'Akses tidak diizinkan untuk level Anda.');
         }
 
         return $next($request);
