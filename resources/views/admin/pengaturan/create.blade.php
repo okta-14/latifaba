@@ -56,7 +56,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Header</label>
-                                <input type="text" name="header" class="form-control @error('header') is-invalid @enderror" value="{{ old('header') }}" placeholder="Masukkan header">
+                                <textarea name="header" class="form-control @error('header') is-invalid @enderror" rows="2" placeholder="Baris 1 (biru)&#10;Baris 2 (merah)">{{ old('header') }}</textarea>
+                                <small class="text-muted">Baris pertama tampil biru, baris kedua tampil merah (tekan Enter untuk baris baru).</small>
                                 @error('header')
                                     <span class="invalid-feedback">{{ $message }}</span>
                                 @enderror

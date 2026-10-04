@@ -23,6 +23,9 @@ class PengaturanController extends Controller
 
     public function store(Request $request)
     {
+        // Tambah https:// otomatis kalau admin mengisi URL tanpa http(s)
+        $this->normalizeUrls($request);
+
         // VALIDASI
         $request->validate([
             'company' => 'required|max:255',
@@ -107,12 +110,29 @@ class PengaturanController extends Controller
     public function edit($id)
     {
         $pengaturan = Pengaturan::findOrFail($id);
-        return view('admin.pengaturan.edit', compact('pengaturan'));
+
+        // Ambil nilai mentah dari database, apapun setting model-nya
+        $raw = $pengaturan->getRawOriginal('address');
+
+        if (is_array($raw)) {
+            $address = $raw;
+        } else {
+            $decoded = json_decode((string) $raw, true);
+
+            $address = is_array($decoded)
+                ? $decoded
+                : ['id' => (string) $raw]; // data lama berupa teks biasa
+        }
+
+        return view('admin.pengaturan.edit', compact('pengaturan', 'address'));
     }
 
     public function update(Request $request, $id)
     {
         $pengaturan = Pengaturan::findOrFail($id);
+
+        // Tambah https:// otomatis kalau admin mengisi URL tanpa http(s)
+        $this->normalizeUrls($request);
 
         // VALIDASI
         $request->validate([
@@ -144,6 +164,7 @@ class PengaturanController extends Controller
             'member' => 'nullable|url|max:255',
         ]);
 
+        // File tidak ikut di $data, jadi gambar lama tidak tertimpa kosong
         $data = $request->except(['favicon', 'background', 'background_intro', 'logo']);
 
         // AUTO-TRANSLATE ADDRESS
@@ -227,6 +248,27 @@ class PengaturanController extends Controller
 
         return redirect()->route('pengaturan.index')
             ->with('success', 'Data pengaturan berhasil dihapus.');
+    }
+
+    /**
+     * Tambahkan https:// pada URL yang diisi tanpa http:// atau https://
+     * supaya sesuai dengan contoh di form (example.com).
+     */
+    private function normalizeUrls(Request $request): void
+    {
+        $merge = [];
+
+        foreach (['website', 'url_popup', 'catalog', 'member'] as $field) {
+            $value = trim((string) $request->input($field));
+
+            if ($value !== '' && !preg_match('~^https?://~i', $value)) {
+                $merge[$field] = 'https://' . $value;
+            }
+        }
+
+        if ($merge) {
+            $request->merge($merge);
+        }
     }
 
     private function autoTranslate(array $data, array $fields): array

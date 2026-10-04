@@ -1,9 +1,16 @@
+@php
+    $pengaturan  = \App\Models\Pengaturan::first();
+    $companyName = $pengaturan->company ?? 'Latifaba Group';
+    $logoUrl     = ($pengaturan && $pengaturan->logo)
+        ? asset($pengaturan->logo)
+        : asset('images/remove_logo.png');
+@endphp
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latifaba Group</title>
+    <title>{{ $companyName }}</title>
 
     <link rel="stylesheet" href="{{ asset('css/frontend/landingPage.css') }}">
 
@@ -19,11 +26,11 @@
     <div class="content">
 
         <img
-            src="{{ asset('images/remove_logo.png') }}"
+            src="{{ $logoUrl }}"
             class="logo"
-            alt="Logo">
+            alt="{{ $companyName }}">
 
-        <h1>LATIFABA GROUP</h1>
+        <h1>{{ mb_strtoupper($companyName) }}</h1>
 
         <p>
             Bergerak Bertumbuh bersama

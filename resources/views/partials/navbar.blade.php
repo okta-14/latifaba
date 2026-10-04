@@ -10,13 +10,18 @@
             $wa = '62' . substr($wa, 1);
         }
     }
+
+    $companyName = $pengaturan->company ?? 'Latifaba Group';
+    $logoUrl     = ($pengaturan && $pengaturan->logo)
+        ? asset($pengaturan->logo)
+        : asset('images/remove_logo.png');
 @endphp
 
 <nav>
 
     <div class="logo-latifaba">
-        <img src="{{ asset('images/remove_logo.png') }}" alt="Latifaba Logo">
-        <p>Latifaba Group</p>
+        <img src="{{ $logoUrl }}" alt="{{ $companyName }}">
+        <p>{{ $companyName }}</p>
     </div>
 
     <!-- Tombol Hamburger -->

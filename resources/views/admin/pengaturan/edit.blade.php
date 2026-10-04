@@ -57,9 +57,10 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Header</label>
-                                <input type="text" name="header" class="form-control @error('header') is-invalid @enderror" value="{{ old('header', $pengaturan->header) }}" placeholder="Masukkan header">
+                                <textarea name="header" class="form-control @error('header') is-invalid @enderror" rows="2" placeholder="Baris 1 (biru)&#10;Baris 2 (merah)">{{ old('header', $pengaturan->header) }}</textarea>
+                                <small class="text-muted">Baris pertama tampil biru, baris kedua tampil merah (tekan Enter untuk baris baru).</small>
                                 @error('header')
-                                    <span class="invalid-feedback">{{ $message }}</span>
+                                    <span class="invalid-feedback d-block">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -71,7 +72,7 @@
                             {{-- Address (Indonesia) --}}
                             <div class="form-group">
                                 <label>Alamat (Indonesia) <span class="text-danger">*</span></label>
-                                <textarea name="address[id]" class="form-control @error('address.id') is-invalid @enderror" rows="3" placeholder="Masukkan alamat lengkap">{{ old('address.id', $pengaturan->getTranslation('address', 'id', false)) }}</textarea>
+                                <textarea name="address[id]" class="form-control @error('address.id') is-invalid @enderror" rows="3" placeholder="Masukkan alamat lengkap">{{ old('address.id', $address['id'] ?? '') }}</textarea>
                                 @error('address.id')
                                     <span class="invalid-feedback">{{ $message }}</span>
                                 @enderror
@@ -83,7 +84,7 @@
                             {{-- Address (English) --}}
                             <div class="form-group">
                                 <label>Address (English)</label>
-                                <textarea name="address[en]" class="form-control @error('address.en') is-invalid @enderror" rows="3" placeholder="Kosongkan untuk auto-translate">{{ old('address.en', $pengaturan->getTranslation('address', 'en', false)) }}</textarea>
+                                <textarea name="address[en]" class="form-control @error('address.en') is-invalid @enderror" rows="3" placeholder="Kosongkan untuk auto-translate">{{ old('address.en', $address['en'] ?? '') }}</textarea>
                                 @error('address.en')
                                     <span class="invalid-feedback">{{ $message }}</span>
                                 @enderror
@@ -92,7 +93,7 @@
                             {{-- Address (Japanese) --}}
                             <div class="form-group">
                                 <label>住所 (日本語)</label>
-                                <textarea name="address[jp]" class="form-control @error('address.jp') is-invalid @enderror" rows="3" placeholder="空欄の場合、自動翻訳">{{ old('address.jp', $pengaturan->getTranslation('address', 'jp', false)) }}</textarea>
+                                <textarea name="address[jp]" class="form-control @error('address.jp') is-invalid @enderror" rows="3" placeholder="空欄の場合、自動翻訳">{{ old('address.jp', $address['jp'] ?? '') }}</textarea>
                                 @error('address.jp')
                                     <span class="invalid-feedback">{{ $message }}</span>
                                 @enderror
@@ -187,38 +188,38 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label><i class="fas fa-image text-success"></i> Background</label>
+                                @if($pengaturan->background)
+                                    <div class="mb-2">
+                                        <img src="{{ asset($pengaturan->background) }}" alt="Background" style="max-height: 80px;" class="img-thumbnail">
+                                    </div>
+                                @endif
                                 <div class="custom-file">
                                     <input type="file" name="background" class="custom-file-input @error('background') is-invalid @enderror">
                                     <label class="custom-file-label">Pilih Background...</label>
                                 </div>
-                                <small class="text-muted">Format: jpg, jpeg, png, gif | Max: 2MB. Kosongkan jika tidak ingin mengubah.</small>
+                                <small class="text-muted">Format: jpg, jpeg, png, gif | Max: 2MB | Kosongkan jika tidak ingin mengganti</small>
                                 @error('background')
                                     <span class="invalid-feedback d-block">{{ $message }}</span>
                                 @enderror
-
-                                @if($pengaturan->background)
-                                    <p class="mb-1 mt-2"><small class="text-muted">Background saat ini:</small></p>
-                                    <img src="{{ asset($pengaturan->background) }}" class="img-thumbnail" style="max-width:150px;">
-                                @endif
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label><i class="fas fa-image text-success"></i> Background Intro</label>
+                                @if($pengaturan->background_intro)
+                                    <div class="mb-2">
+                                        <img src="{{ asset($pengaturan->background_intro) }}" alt="Background Intro" style="max-height: 80px;" class="img-thumbnail">
+                                    </div>
+                                @endif
                                 <div class="custom-file">
                                     <input type="file" name="background_intro" class="custom-file-input @error('background_intro') is-invalid @enderror">
                                     <label class="custom-file-label">Pilih Background Intro...</label>
                                 </div>
-                                <small class="text-muted">Format: jpg, jpeg, png, gif | Max: 2MB. Kosongkan jika tidak ingin mengubah.</small>
+                                <small class="text-muted">Format: jpg, jpeg, png, gif | Max: 2MB | Kosongkan jika tidak ingin mengganti</small>
                                 @error('background_intro')
                                     <span class="invalid-feedback d-block">{{ $message }}</span>
                                 @enderror
-
-                                @if($pengaturan->background_intro)
-                                    <p class="mb-1 mt-2"><small class="text-muted">Background Intro saat ini:</small></p>
-                                    <img src="{{ asset($pengaturan->background_intro) }}" class="img-thumbnail" style="max-width:150px;">
-                                @endif
                             </div>
                         </div>
                     </div>
@@ -227,38 +228,38 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label><i class="fas fa-image text-primary"></i> Logo</label>
+                                @if($pengaturan->logo)
+                                    <div class="mb-2">
+                                        <img src="{{ asset($pengaturan->logo) }}" alt="Logo" style="max-height: 80px;" class="img-thumbnail">
+                                    </div>
+                                @endif
                                 <div class="custom-file">
                                     <input type="file" name="logo" class="custom-file-input @error('logo') is-invalid @enderror">
                                     <label class="custom-file-label">Pilih Logo...</label>
                                 </div>
-                                <small class="text-muted">Format: jpg, jpeg, png, gif | Max: 2MB. Kosongkan jika tidak ingin mengubah.</small>
+                                <small class="text-muted">Format: jpg, jpeg, png, gif | Max: 2MB | Kosongkan jika tidak ingin mengganti</small>
                                 @error('logo')
                                     <span class="invalid-feedback d-block">{{ $message }}</span>
                                 @enderror
-
-                                @if($pengaturan->logo)
-                                    <p class="mb-1 mt-2"><small class="text-muted">Logo saat ini:</small></p>
-                                    <img src="{{ asset($pengaturan->logo) }}" class="img-thumbnail" style="max-width:150px;">
-                                @endif
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label><i class="fas fa-image text-primary"></i> Favicon</label>
+                                @if($pengaturan->favicon)
+                                    <div class="mb-2">
+                                        <img src="{{ asset($pengaturan->favicon) }}" alt="Favicon" style="max-height: 80px;" class="img-thumbnail">
+                                    </div>
+                                @endif
                                 <div class="custom-file">
                                     <input type="file" name="favicon" class="custom-file-input @error('favicon') is-invalid @enderror">
                                     <label class="custom-file-label">Pilih Favicon...</label>
                                 </div>
-                                <small class="text-muted">Format: ico, jpg, jpeg, png, gif | Max: 2MB. Kosongkan jika tidak ingin mengubah.</small>
+                                <small class="text-muted">Format: ico, jpg, jpeg, png, gif | Max: 2MB | Kosongkan jika tidak ingin mengganti</small>
                                 @error('favicon')
                                     <span class="invalid-feedback d-block">{{ $message }}</span>
                                 @enderror
-
-                                @if($pengaturan->favicon)
-                                    <p class="mb-1 mt-2"><small class="text-muted">Favicon saat ini:</small></p>
-                                    <img src="{{ asset($pengaturan->favicon) }}" class="img-thumbnail" style="max-width:80px;">
-                                @endif
                             </div>
                         </div>
                     </div>

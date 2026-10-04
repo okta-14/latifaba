@@ -10,6 +10,11 @@
             $wa = '62' . substr($wa, 1);
         }
     }
+
+    // Header hero: baris 1 = biru, baris 2 = merah
+    $headerLines = preg_split('/\r\n|\r|\n/', trim($pengaturan->header ?? ''));
+    $heroTitle1  = trim($headerLines[0] ?? '');
+    $heroTitle2  = trim($headerLines[1] ?? '');
 @endphp
 
 @extends('layouts.frontend')
@@ -24,8 +29,8 @@
 
     <div class="header-content">
 
-        <h1 class="blue">{{ __('messages.home_hero_title_1') }}</h1>
-        <h1 class="red">{{ __('messages.home_hero_title_2') }}</h1>
+        <h1 class="blue">{{ $heroTitle1 ?: __('messages.home_hero_title_1') }}</h1>
+        <h1 class="red">{{ $heroTitle2 ?: __('messages.home_hero_title_2') }}</h1>
 
         <p>{{ __('messages.home_hero_subtitle') }}</p>
 
@@ -37,20 +42,20 @@
             </button>
 
             @if($wa)
-        <button class="btn-red">
-            <a href="https://wa.me/{{ $wa }}" target="_blank">
-                {{ __('messages.home_hero_contact') }}
-            </a>
-            <i class="fa-solid fa-phone"></i>
-        </button>
-        @else
-            <button class="btn-red">
-                <a href="#footer">
-                    {{ __('messages.home_hero_contact') }}
-                </a>
-                <i class="fa-solid fa-phone"></i>
-            </button>
-        @endif
+                <button class="btn-red">
+                    <a href="https://wa.me/{{ $wa }}" target="_blank">
+                        {{ __('messages.home_hero_contact') }}
+                    </a>
+                    <i class="fa-solid fa-phone"></i>
+                </button>
+            @else
+                <button class="btn-red">
+                    <a href="#footer">
+                        {{ __('messages.home_hero_contact') }}
+                    </a>
+                    <i class="fa-solid fa-phone"></i>
+                </button>
+            @endif
 
         </div>
 
