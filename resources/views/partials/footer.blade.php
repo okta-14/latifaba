@@ -27,61 +27,60 @@
                 {{ __('messages.footer_about') }}
             </p>
 
-            
             <div class="social-media">
 
-    @foreach ($medias as $media)
+                @foreach ($medias as $media)
 
-        @php
-            $icon = 'fa-solid fa-globe';
+                    @php
+                        $icon = 'fa-solid fa-globe';
 
-            switch (strtolower($media->title)) {
-                case 'instagram':
-                    $icon = 'fa-brands fa-instagram';
-                    break;
+                        switch (strtolower($media->title)) {
+                            case 'instagram':
+                                $icon = 'fa-brands fa-instagram';
+                                break;
 
-                case 'facebook':
-                    $icon = 'fa-brands fa-facebook-f';
-                    break;
+                            case 'facebook':
+                                $icon = 'fa-brands fa-facebook-f';
+                                break;
 
-                case 'linkedin':
-                    $icon = 'fa-brands fa-linkedin-in';
-                    break;
+                            case 'linkedin':
+                                $icon = 'fa-brands fa-linkedin-in';
+                                break;
 
-                case 'youtube':
-                    $icon = 'fa-brands fa-youtube';
-                    break;
+                            case 'youtube':
+                                $icon = 'fa-brands fa-youtube';
+                                break;
 
-                case 'twitter':
-                case 'x':
-                    $icon = 'fa-brands fa-x-twitter';
-                    break;
+                            case 'twitter':
+                            case 'x':
+                                $icon = 'fa-brands fa-x-twitter';
+                                break;
 
-                case 'tiktok':
-                    $icon = 'fa-brands fa-tiktok';
-                    break;
+                            case 'tiktok':
+                                $icon = 'fa-brands fa-tiktok';
+                                break;
 
-                case 'telegram':
-                    $icon = 'fa-brands fa-telegram';
-                    break;
+                            case 'telegram':
+                                $icon = 'fa-brands fa-telegram';
+                                break;
 
-                case 'github':
-                    $icon = 'fa-brands fa-github';
-                    break;
+                            case 'github':
+                                $icon = 'fa-brands fa-github';
+                                break;
 
-                case 'whatsapp':
-                    $icon = 'fa-brands fa-whatsapp';
-                    break;
-            }
-        @endphp
+                            case 'whatsapp':
+                                $icon = 'fa-brands fa-whatsapp';
+                                break;
+                        }
+                    @endphp
 
-        <a href="{{ $media->url }}" target="_blank">
-            <i class="{{ $icon }}"></i>
-        </a>
+                    <a href="{{ $media->url }}" target="_blank">
+                        <i class="{{ $icon }}"></i>
+                    </a>
 
-    @endforeach
+                @endforeach
 
-</div>
+            </div>
 
         </div>
 
@@ -92,17 +91,41 @@
 
             <ul>
 
-                <li><a href="/"><i class="fa-solid fa-chevron-right"></i> {{ __('messages.nav_home') }}</a></li>
+                <li>
+                    <a href="{{ route('landingPage') }}">
+                        <i class="fa-solid fa-chevron-right"></i> {{ __('messages.nav_home') }}
+                    </a>
+                </li>
 
-                <li><a href="#about"><i class="fa-solid fa-chevron-right"></i> {{ __('messages.nav_about') }}</a></li>
+                <li>
+                    <a href="{{ route('landingPage') }}#about">
+                        <i class="fa-solid fa-chevron-right"></i> {{ __('messages.nav_about') }}
+                    </a>
+                </li>
 
-                <li><a href="#member"><i class="fa-solid fa-chevron-right"></i> {{ __('messages.nav_members') }}</a></li>
+                <li>
+                    <a href="{{ route('members') }}">
+                        <i class="fa-solid fa-chevron-right"></i> {{ __('messages.nav_members') }}
+                    </a>
+                </li>
 
-                <li><a href="#program"><i class="fa-solid fa-chevron-right"></i> {{ __('messages.footer_programs') }}</a></li>
+                <li>
+                    <a href="{{ route('program') }}">
+                        <i class="fa-solid fa-chevron-right"></i> {{ __('messages.footer_programs') }}
+                    </a>
+                </li>
 
-                <li><a href="#news"><i class="fa-solid fa-chevron-right"></i> {{ __('messages.nav_news') }}</a></li>
+                <li>
+                    <a href="{{ route('blog') }}">
+                        <i class="fa-solid fa-chevron-right"></i> {{ __('messages.nav_news') }}
+                    </a>
+                </li>
 
-                <li><a href="/galeri"><i class="fa-solid fa-chevron-right"></i> {{ __('messages.footer_galeri') }}</a></li>
+                <li>
+                    <a href="{{ route('galeri') }}">
+                        <i class="fa-solid fa-chevron-right"></i> {{ __('messages.footer_galeri') }}
+                    </a>
+                </li>
 
             </ul>
 
